@@ -4,6 +4,8 @@ import { simpleBlogCard } from "./lib/interface";
 import Link from "next/link";
 import Image from "next/image";
 
+export const revalidate = 60;
+
 async function getData() {
   const query = `
   *[_type == 'blog'] | order(_createdAt desc) {

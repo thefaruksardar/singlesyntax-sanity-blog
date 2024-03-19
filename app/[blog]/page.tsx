@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { client } from "../lib/sanity";
 import { PortableText } from "next-sanity";
-
+export const revalidate = 60;
 async function getPost(slug: string) {
   const query = `
     *[_type == "blog" && slug.current == '${slug}'] {
